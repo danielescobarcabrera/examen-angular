@@ -1,0 +1,27 @@
+<app-list-services (sendPosition)="getPositions($event)"></app-list-services>
+<div class="modal" id="editService" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Editar Servicio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <form>
+            <div class="form-group">
+                <label for="">Nombre</label>
+                <input *ngIf="serviceFound" type="text" class="form-control" name="nombre" [(ngModel)]="serviceFound.nombre"/>
+            </div>
+            <div class="form-group">
+                <label for="">Descripcion</label>
+                <textarea *ngIf="serviceFound" class="form-control" name="descripcion"  [(ngModel)]="serviceFound.descripcion"></textarea>
+            </div>
+         </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)="editService()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>

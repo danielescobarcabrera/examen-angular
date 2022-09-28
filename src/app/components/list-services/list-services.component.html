@@ -1,0 +1,27 @@
+<div class="container">
+  <!-- <h3 class="ml-3">Mis Servicios</h3> -->
+
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-4 mt-0" *ngFor="let service of myServices;let i= index">
+        <div class="card mt-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{service.nombre}}</h5>
+            <p class="card-text">{{service.descripcion}}</p>
+          </div>
+          <div class="card-footer">
+            <a
+              href="javascript:void(0);"
+              class="card-link"
+              data-bs-toggle="modal"
+              data-bs-target="#editService"
+              (click)="getPositions(service.id)"
+              >Editar</a
+            >
+            <a href="javascript:void(0);" class="card-link" (click)="deleteService(i)">Eliminar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
